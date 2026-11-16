@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أنواع الشركات التجارية في القانون السوري</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;--bg:#0b1b2b;--bg2:#13324d;--gold:#e8b84a;--tx:#fff;--mu:#a9bfd3;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#050d16;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:var(--tx)}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:12px}
+#stage{position:relative;width:min(100%,960px);aspect-ratio:16/9;overflow:hidden;border-radius:14px;background:radial-gradient(circle at 80% 20%,var(--bg2),var(--bg) 70%)}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.18;background:var(--gold);animation:float 6s ease-in-out infinite}
+.o1{width:30%;aspect-ratio:1;left:-8%;bottom:-15%}.o2{width:14%;aspect-ratio:1;right:10%;top:8%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-18px) scale(1.06)}}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5%}
+.scene>*{opacity:0;animation:up .7s cubic-bezier(.2,.8,.2,1) forwards}
+.scene>:nth-child(2){animation-delay:.25s}.scene>:nth-child(3){animation-delay:.5s}.scene>:nth-child(4){animation-delay:.75s}
+.scene.out{animation:fade .4s forwards}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:0;transform:scale(1.03)}}
+@keyframes pop{from{transform:scale(0) rotate(-90deg)}to{transform:none}}
+h1{font-size:clamp(24px,5.2vw,52px);font-weight:900;margin:0}
+h2{font-size:clamp(22px,4.6vw,46px);font-weight:900;margin:.2em 0;color:var(--gold)}
+p{font-size:clamp(14px,2.4vw,24px);color:var(--mu);margin:.3em 0;max-width:80%;line-height:1.7}
+.sub{color:var(--gold);font-size:clamp(14px,2.2vw,22px);letter-spacing:.05em}
+.num{width:clamp(48px,9vw,86px);aspect-ratio:1;border-radius:50%;background:var(--gold);color:var(--bg);display:grid;place-items:center;font-size:clamp(24px,5vw,46px);font-weight:900;opacity:1;animation:pop .6s cubic-bezier(.3,1.5,.5,1) forwards}
+svg{width:clamp(70px,14vw,130px);height:auto}
+.line{width:0;height:4px;background:var(--gold);border-radius:4px;animation:w 1s .4s forwards;opacity:1}
+@keyframes w{to{width:40%}}
+#bar{width:min(100%,960px);height:4px;background:#1b2f42;border-radius:4px;overflow:hidden}
+#bar i{display:block;height:100%;width:0;background:var(--gold)}
+button{font-family:inherit;background:var(--gold);color:var(--bg);border:0;border-radius:20px;padding:6px 20px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="stage"><div class="orb o1"></div><div class="orb o2"></div><div id="s"></div></div>
+<div id="bar"><i id="p"></i></div>
+<button id="r">▶ تشغيل مع الموسيقى</button>
+<script>
+var icons={
+1:'<svg viewBox="0 0 100 60" fill="none" stroke="#e8b84a" stroke-width="5" stroke-linecap="round"><circle cx="30" cy="22" r="13"/><circle cx="70" cy="22" r="13"/><path d="M8 56c2-14 12-18 22-18s20 4 22 18M48 56c2-14 12-18 22-18s20 4 22 18"/></svg>',
+2:'<svg viewBox="0 0 100 60" fill="none" stroke="#e8b84a" stroke-width="5" stroke-linecap="round"><circle cx="30" cy="22" r="13"/><circle cx="72" cy="22" r="10" stroke-dasharray="6 7"/><path d="M8 56c2-14 12-18 22-18s20 4 22 18M56 56c2-10 8-14 16-14s14 4 16 14"/></svg>',
+3:'<svg viewBox="0 0 100 60" fill="none" stroke="#e8b84a" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 8"><circle cx="35" cy="30" r="22"/><circle cx="65" cy="30" r="22"/></svg>',
+4:'<svg viewBox="0 0 100 60" fill="none" stroke="#e8b84a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 4 12 16v18c0 12 16 20 38 24 22-4 38-12 38-24V16z"/><path d="m36 32 10 10 18-20"/></svg>',
+5:'<svg viewBox="0 0 100 60" fill="none" stroke="#e8b84a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 52h84M18 52V30M38 52V18M58 52V34M78 52V8"/><path d="m14 22 24-12 20 14 28-18"/></svg>'};
+var T=[
+['<h1>أنواع الشركات التجارية</h1>','<div class="line"></div>','<p class="sub">وفق قانون الشركات السوري — المرسوم التشريعي رقم 29 لعام 2011</p>'],
+[1,'شركة التضامن','شركاء متضامنون مسؤولون عن ديون الشركة بأموالهم الخاصة'],
+[2,'شركة التوصية','شركاء متضامنون وشركاء موصون تقتصر مسؤوليتهم على حصصهم'],
+[3,'شركة المحاصة','شركة مستترة لا تتمتع بالشخصية الاعتبارية، لعملية أو أكثر'],
+[4,'الشركة المحدودة المسؤولية','مسؤولية الشريك بحدود حصته من رأس المال'],
+[5,'الشركة المساهمة المغفلة','رأس المال مقسّم إلى أسهم قابلة للتداول'],
+['<h1>خمسة أشكال قانونية</h1>','<div class="line"></div>','<p>اختر الشكل الأنسب لمشروعك</p>']];
+var D=[3000,3000,3000,3000,3000,3000,2000],S=document.getElementById('s'),P=document.getElementById('p'),timers=[],raf;
+function show(i){
+  var t=T[i],h;
+  if(typeof t[0]==='number')h='<div class="num">'+t[0]+'</div>'+icons[t[0]]+'<h2>'+t[1]+'</h2><p>'+t[2]+'</p>';
+  else h=t.join('');
+  S.innerHTML='<div class="scene">'+h+'</div>';
+}
+function out(){var e=S.firstChild;if(e)e.classList.add('out')}
+function play(){
+  timers.forEach(clearTimeout);timers=[];cancelAnimationFrame(raf);
+  var at=0,t0=performance.now();
+  D.forEach(function(d,i){
+    timers.push(setTimeout(function(){show(i)},at));
+    if(i<D.length-1)timers.push(setTimeout(out,at+d-400));
+    at+=d;
+  });
+  (function tick(n){var f=Math.min((n-t0)/20000,1);P.style.width=f*100+'%';if(f<1)raf=requestAnimationFrame(tick)})(t0);
+}
+var AC,M=function(n){return 440*Math.pow(2,(n-69)/12)};
+var CH=[[38,[62,66,69,74]],[45,[61,64,69,73]],[47,[62,66,71,74]],[42,[61,66,69,73]],[43,[62,67,71,74]],[38,[62,66,69,74]],[43,[62,67,71,74]],[45,[61,64,69,73]]];
+var PAT=[0,1,2,3,2,1,2,3];
+function note(t,f,d,v,type){var o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.02);g.gain.exponentialRampToValueAtTime(.0008,t+d);
+ o.connect(g);g.connect(bus);o.start(t);o.stop(t+d+.05)}
+var bus;
+function music(){
+ try{if(AC)AC.close()}catch(e){}
+ try{
+ AC=new (window.AudioContext||window.webkitAudioContext)();
+ var m=AC.createGain(),dl=AC.createDelay(),fb=AC.createGain(),t0=AC.currentTime+.05;
+ m.gain.setValueAtTime(0,t0);m.gain.linearRampToValueAtTime(.5,t0+1.5);m.gain.setValueAtTime(.5,t0+18);m.gain.linearRampToValueAtTime(0,t0+20);
+ dl.delayTime.value=.28;fb.gain.value=.35;bus=AC.createGain();
+ bus.connect(m);bus.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(m);m.connect(AC.destination);
+ for(var k=0;k<16;k++){var c=CH[k%8],t=t0+k*1.25;
+  note(t,M(c[0]),1.6,.32,'triangle');
+  for(var s=0;s<8;s++)note(t+s*.156,M(c[1][PAT[s]]),.9,.12,'sine');
+  if(k%2==0)note(t,M(c[1][0]-12),1.4,.1,'sine');}
+ }catch(e){}
+}
+S.innerHTML='<div class="scene"><h1>🎻</h1><p>اضغط «تشغيل مع الموسيقى» للبدء</p></div>';
+document.getElementById('r').onclick=function(){music();play()};
+</script>
+</body>
+</html>
